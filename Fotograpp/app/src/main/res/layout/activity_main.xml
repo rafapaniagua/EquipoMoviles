@@ -8,11 +8,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="211dp"
-        android:layout_height="426dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="335dp"
+        android:layout_height="385dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/previo" />
@@ -21,12 +23,14 @@
         android:id="@+id/imageButton"
         android:layout_width="181dp"
         android:layout_height="164dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/app_name"
         android:onClick="tomarFoto"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/camara" />
 </android.support.constraint.ConstraintLayout>
