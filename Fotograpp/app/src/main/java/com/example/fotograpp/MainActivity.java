@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private File createImageFile() throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "Backup_" + timeStamp + "_";
+        String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         return image;
     }
 
-    //Método para tomar foto y crear el archivo
+   //Método para tomar foto y crear el archivo
     static final int REQUEST_TAKE_PHOTO = 1;
     public void tomarFoto(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
