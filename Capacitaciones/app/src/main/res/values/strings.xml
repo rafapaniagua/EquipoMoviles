@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Capacitaciones</string>
+    <string name="vacio"></string>
+
+    <string name="login_correo">Correo</string>
+    <string name="login_contrasena">Contraseña</string>
+    <string name="login_btn_Ingresar">Ingresar</string>
+    <string name="login_btn_Registrar">Registrar</string>
+
+    <string name="menu_nombreU">Nombre Usuario</string>
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_grupo">Grupos</string>
+    <string name="menu_curso">Cursos</string>
+    <string name="menu_usuario">Usuarios</string>
+
+    <string name="curso_titulo">Nuevo Curso</string>
+    <string name="curso_nombre">Nombre</string>
+    <string name="curso_duracion">Duración</string>
+    <string name="curso_descripcion">Descripción</string>
+    <string name="curso_fecha">Fecha de Creación</string>
+    <string name="curso_btn_cancelar">Cancelar</string>
+    <string name="curso_btn_guardar">Guardar Curso</string>
+    <string name="curso_btn_crear">Crear Curso</string>
 </resources>
