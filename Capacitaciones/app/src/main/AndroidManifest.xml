@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ListCurso"></activity>
+        <activity android:name=".ListClase"></activity>
+        <activity android:name=".AddClase" />
+        <activity android:name=".ListGrupo" />
+        <activity android:name=".AddGrupo" />
+        <activity android:name=".ListCurso" />
         <activity android:name=".Inicio" />
         <activity android:name=".AddCurso" />
         <activity android:name=".MainActivity">
