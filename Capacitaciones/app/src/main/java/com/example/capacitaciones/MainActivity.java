@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void verVista(View v){
-        Intent intent = new Intent(this, ListCurso.class);
+        Intent intent = new Intent(this, Inicio.class);
         startActivity(intent);
     }
 }
