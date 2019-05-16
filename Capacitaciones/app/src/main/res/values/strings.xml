@@ -21,4 +21,11 @@
     <string name="curso_btn_cancelar">Cancelar</string>
     <string name="curso_btn_guardar">Guardar Curso</string>
     <string name="curso_btn_crear">Crear Curso</string>
+
+    <string name="curso_list_titulo">Cursos Actuales</string>
+    <string name="curso_list_nombre">Nombre</string>
+    <string name="curso_list_duracion">Duración</string>
+    <string name="curso_list_opciones">Opciones</string>
+    <string name="curso_list_btnregresar">Regresar</string>
+    <string name="curso_list_btnagregar">Agregar Curso</string>
 </resources>
