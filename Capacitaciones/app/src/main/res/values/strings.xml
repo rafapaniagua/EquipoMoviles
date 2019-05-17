@@ -7,6 +7,13 @@
     <string name="login_btn_Ingresar">Ingresar</string>
     <string name="login_btn_Registrar">Registrar</string>
 
+    <string name="registro_nombre">Nombre(s)</string>
+    <string name="registro_apellido">Apellido(s)</string>
+    <string name="registro_rol">Rol</string>
+    <string name="registro_correo1">Correo</string>
+    <string name="registro_correo">name@domain</string>
+    <string name="registro_titulo">Registro</string>
+
     <string name="menu_nombreU">Nombre Usuario</string>
     <string name="menu_inicio">Inicio</string>
     <string name="menu_grupo">Grupos</string>
