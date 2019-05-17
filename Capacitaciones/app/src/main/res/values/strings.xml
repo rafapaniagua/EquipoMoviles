@@ -7,6 +7,13 @@
     <string name="login_btn_Ingresar">Ingresar</string>
     <string name="login_btn_Registrar">Registrar</string>
 
+    <string name="registro_nombre">Nombre(s)</string>
+    <string name="registro_apellido">Apellido(s)</string>
+    <string name="registro_rol">Rol</string>
+    <string name="registro_correo1">Correo</string>
+    <string name="registro_correo">name@domain</string>
+    <string name="registro_titulo">Registro</string>
+
     <string name="menu_nombreU">Nombre Usuario</string>
     <string name="menu_inicio">Inicio</string>
     <string name="menu_grupo">Grupos</string>
@@ -22,6 +29,27 @@
     <string name="curso_btn_guardar">Guardar Curso</string>
     <string name="curso_btn_crear">Crear Curso</string>
 
+    <string name="grupo_titulo">Nuevo Grupo</string>
+    <string name="grupo_clave">Clave</string>
+    <string name="grupo_curso">Curso</string>
+    <string name="grupo_docente">Docente</string>
+    <string name="grupo_no_integrantes">Número de Integrantes</string>
+    <string name="grupo_status">Status</string>
+    <string name="grupo_fecha_inicio">Fecha de Inicio</string>
+    <string name="grupo_fecha_fin">Fecha de Fin</string>
+    <string name="grupo_btn_cancelar">Cancelar</string>
+    <string name="grupo_btn_guardar">Guardar Grupo</string>
+    <string name="grupo_btn_crear">Crear Grupo</string>
+
+    <string name="clase_titulo">Nueva Clase</string>
+    <string name="clase_fecha">Fecha</string>
+    <string name="clase_hora">Hora</string>
+    <string name="clase_descripcion">Descripción</string>
+    <string name="clase_status">Status</string>
+    <string name="clase_btn_cancelar">Cancelar</string>
+    <string name="clase_btn_guardar">Guardar Clase</string>
+    <string name="clase_btn_crear">Crear Clase</string>
+
     <string name="curso_list_titulo">Cursos Actuales</string>
     <string name="curso_list_nombre">Nombre</string>
     <string name="curso_list_duracion">Duración</string>
@@ -31,6 +59,23 @@
 
     <string name="inicio_misgrupos">Mis Grupos</string>
     <string name="inicio_misclases">Proximas Clases</string>
+    
+    <string name="grupo_list_titulo">Grupos Actuales</string>
+    <string name="grupo_list_clave">Clave</string>
+    <string name="grupo_list_curso">Curso</string>
+    <string name="grupo_list_docente">Docente</string>
+    <string name="grupo_list_integrantes">Integrantes</string>
+    <string name="grupo_list_opciones">Opciones</string>
+    <string name="grupo_list_btnregresar">Regresar</string>
+    <string name="grupo_list_btnagregar">Agregar Grupo</string>
+
+    <string name="clase_list_titulo">Clases Actuales</string>
+    <string name="clase_list_fecha">Fecha</string>
+    <string name="clase_list_hora">Hora</string>
+    <string name="clase_list_status">Status</string>
+    <string name="clase_list_opciones">Opciones</string>
+    <string name="clase_list_btnregresar">Regresar</string>
+    <string name="clase_list_btnagregar">Agregar Clase</string>
 
     <string name="inicio_list_nombre">Nombre Curso</string>
     <string name="inicio_list_clave">Clave</string>
