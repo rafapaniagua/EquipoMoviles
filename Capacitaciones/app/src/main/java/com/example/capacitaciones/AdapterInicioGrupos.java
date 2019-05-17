@@ -9,12 +9,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class AdapterInicio extends RecyclerView.Adapter<AdapterInicio.ViewHolderInicio> {
+public class AdapterInicioGrupos extends RecyclerView.Adapter<AdapterInicioGrupos.ViewHolderInicio> {
 
     private Context context;
     private ArrayList<String> cursos;
 
-    public AdapterInicio(Context context, ArrayList<String> nombres) {
+    public AdapterInicioGrupos(Context context, ArrayList<String> nombres) {
         this.context = context;
         this.cursos = nombres;
     }
@@ -23,7 +23,7 @@ public class AdapterInicio extends RecyclerView.Adapter<AdapterInicio.ViewHolder
     @Override
     public ViewHolderInicio onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(context).inflate(
-                R.layout.list_item_inicio,
+                R.layout.list_item_inicio_grupos,
                 viewGroup,
                 false);
         return new ViewHolderInicio(view);
@@ -41,13 +41,15 @@ public class AdapterInicio extends RecyclerView.Adapter<AdapterInicio.ViewHolder
 
     public class ViewHolderInicio extends RecyclerView.ViewHolder {
 
-        TextView nombre, responsable;
+        TextView nombre, responsable, clave, status;
 
         public ViewHolderInicio(@NonNull View itemView) {
             super(itemView);
 
-            nombre = (TextView) itemView.findViewById(R.id.tv_list_inicio_nombre);
-            responsable = (TextView) itemView.findViewById(R.id.tv_list_inicio_responsable);
+            clave = (TextView) itemView.findViewById(R.id.tv_list_inicio_g_clave);
+            status = (TextView) itemView.findViewById(R.id.tv_list_inicio_g_status);
+            nombre = (TextView) itemView.findViewById(R.id.tv_list_inicio_g_nombre);
+            responsable = (TextView) itemView.findViewById(R.id.tv_list_inicio_g_responsable);
         }
 
         public void asignarDatos(String dato) {

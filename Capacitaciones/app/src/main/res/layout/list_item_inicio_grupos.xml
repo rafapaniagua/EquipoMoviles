@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +13,16 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_list_inicio_nombre"
+            android:id="@+id/tv_list_inicio_g_clave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/inicio_list_clave"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_list_inicio_g_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -20,7 +31,16 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tv_list_inicio_responsable"
+            android:id="@+id/tv_list_inicio_g_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/inicio_list_status"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_list_inicio_g_responsable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -34,8 +54,9 @@
         android:id="@+id/btn_vermas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
         android:layout_weight="3"
-        android:background="#89DDE7"
+        android:background="#009688"
         android:text="@string/inicio_list_btnvermas"
         android:textColor="#F5181717"
         android:textSize="14sp"

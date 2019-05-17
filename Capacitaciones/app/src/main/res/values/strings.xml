@@ -29,10 +29,18 @@
     <string name="curso_list_btnregresar">Regresar</string>
     <string name="curso_list_btnagregar">Agregar Curso</string>
 
-    <string name="inicio_titulo">Agenda</string>
-    <string name="inicio_miscursos">Cursos Nuevos</string>
+    <string name="inicio_misgrupos">Mis Grupos</string>
+    <string name="inicio_misclases">Proximas Clases</string>
 
-    <string name="inicio_list_nombre">Nombre</string>
+    <string name="inicio_list_nombre">Nombre Curso</string>
+    <string name="inicio_list_clave">Clave</string>
+    <string name="inicio_list_status">Status</string>
     <string name="inicio_list_responsable">Responsable</string>
     <string name="inicio_list_btnvermas">Ver Mas</string>
+
+    <string name="inicio_list_clase_nombre">Nombre Curso</string>
+    <string name="inicio_list_clase_fecha">Fecha</string>
+    <string name="inicio_list_clase_hora">Hora</string>
+    <string name="inicio_list_clase_status">Status</string>
+    <string name="inicio_list_clase_btnvermas">Ver Mas</string>
 </resources>
