@@ -208,16 +208,17 @@
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/et_status"
+            <Spinner
+                android:id="@+id/sp_clase_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="@string/clase_status"
-                android:inputType="time"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp">
+
+            </Spinner>
 
             <TableRow
                 android:id="@+id/tr_botones"
