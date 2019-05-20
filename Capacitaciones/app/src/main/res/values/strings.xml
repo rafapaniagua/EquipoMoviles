@@ -7,6 +7,13 @@
     <string name="login_btn_Ingresar">Ingresar</string>
     <string name="login_btn_Registrar">Registrar</string>
 
+    <string name="registro_nombre">Nombre(s)</string>
+    <string name="registro_apellido">Apellido(s)</string>
+    <string name="registro_rol">Rol</string>
+    <string name="registro_correo1">Correo</string>
+    <string name="registro_correo">name@domain</string>
+    <string name="registro_titulo">Registro</string>
+
     <string name="menu_nombreU">Nombre Usuario</string>
     <string name="menu_inicio">Inicio</string>
     <string name="menu_grupo">Grupos</string>
@@ -50,6 +57,9 @@
     <string name="curso_list_btnregresar">Regresar</string>
     <string name="curso_list_btnagregar">Agregar Curso</string>
 
+    <string name="inicio_misgrupos">Mis Grupos</string>
+    <string name="inicio_misclases">Proximas Clases</string>
+    
     <string name="grupo_list_titulo">Grupos Actuales</string>
     <string name="grupo_list_clave">Clave</string>
     <string name="grupo_list_curso">Curso</string>
@@ -67,10 +77,15 @@
     <string name="clase_list_btnregresar">Regresar</string>
     <string name="clase_list_btnagregar">Agregar Clase</string>
 
-    <string name="inicio_titulo">Agenda</string>
-    <string name="inicio_miscursos">Cursos Nuevos</string>
-
-    <string name="inicio_list_nombre">Nombre</string>
+    <string name="inicio_list_nombre">Nombre Curso</string>
+    <string name="inicio_list_clave">Clave</string>
+    <string name="inicio_list_status">Status</string>
     <string name="inicio_list_responsable">Responsable</string>
     <string name="inicio_list_btnvermas">Ver Mas</string>
+
+    <string name="inicio_list_clase_nombre">Nombre Curso</string>
+    <string name="inicio_list_clase_fecha">Fecha</string>
+    <string name="inicio_list_clase_hora">Hora</string>
+    <string name="inicio_list_clase_status">Status</string>
+    <string name="inicio_list_clase_btnvermas">Ver Mas</string>
 </resources>

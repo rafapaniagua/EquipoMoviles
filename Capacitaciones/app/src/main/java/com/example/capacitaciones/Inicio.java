@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Inicio extends AppCompatActivity {
 
     ArrayList<String> nombres;
-    RecyclerView rv_cursos;
+    RecyclerView rv_grupos, rv_clases;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,16 @@ public class Inicio extends AppCompatActivity {
         nombres.add("Elizabeth");
         nombres.add("Murillo");
 
-        rv_cursos = (RecyclerView) findViewById(R.id.rv_new_cursos);
-        AdapterInicio adapter = new AdapterInicio(this, nombres);
-        rv_cursos.setAdapter(adapter);
-        rv_cursos.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rv_grupos = (RecyclerView) findViewById(R.id.rv_inicio_grupos);
+        AdapterInicioGrupos adapter = new AdapterInicioGrupos(this, nombres);
+        rv_grupos.setAdapter(adapter);
+        rv_grupos.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        rv_clases = (RecyclerView) findViewById(R.id.rv_inicio_clases);
+        AdapterInicioClases adapter1 = new AdapterInicioClases(this, nombres);
+        rv_clases.setAdapter(adapter1);
+        rv_clases.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
     }
 }
 
