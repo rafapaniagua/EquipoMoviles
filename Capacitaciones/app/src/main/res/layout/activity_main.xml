@@ -39,6 +39,18 @@
         android:inputType="textPassword"
         android:text="@string/vacio" />
 
+    <TextView
+        android:id="@+id/tv_mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/login_mensaje"
+        android:textColor="#FDEB0606"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -59,13 +71,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@android:color/holo_orange_dark"
+            android:onClick="InicioSesion"
             android:text="@string/login_btn_Ingresar" />
     </TableRow>
 
-    <Button
-        android:id="@+id/btn_vervista"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="verVista"
-        android:text="Ver" />
 </LinearLayout>

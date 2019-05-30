@@ -4,6 +4,7 @@
 
     <string name="login_correo">Correo</string>
     <string name="login_contrasena">Contraseña</string>
+    <string name="login_mensaje">Correo y/o Contraseña Incorrectos</string>
     <string name="login_btn_Ingresar">Ingresar</string>
     <string name="login_btn_Registrar">Registrar</string>
 

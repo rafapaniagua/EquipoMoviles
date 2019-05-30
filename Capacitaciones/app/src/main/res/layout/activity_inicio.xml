@@ -114,6 +114,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
+            android:onClick="salir"
             app:srcCompat="@drawable/icono_salir" />
 
     </TableRow>

@@ -1,9 +1,12 @@
 package com.example.capacitaciones;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -39,6 +42,15 @@ public class Inicio extends AppCompatActivity {
         rv_clases.setAdapter(adapter1);
         rv_clases.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
+        //RECIBIMOS LOS PARAMETROS
+        String is_admin = this.getIntent().getExtras().getString("is_admin");
+
+    }
+
+    public void salir(View v){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        this.finish();
     }
 }
 
