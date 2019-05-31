@@ -8,16 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.capacitaciones.Modelos.Clases;
+
 import java.util.ArrayList;
 
 public class AdapterInicioClases extends RecyclerView.Adapter<AdapterInicioClases.ViewHolderInicioClases> {
 
 private Context context;
-private ArrayList<String> cursos;
+    ArrayList<Clases> clases_array;
 
-public AdapterInicioClases(Context context, ArrayList<String> nombres) {
+public AdapterInicioClases(Context context, ArrayList<Clases>  clases_array) {
         this.context = context;
-        this.cursos = nombres;
+        this.clases_array = clases_array;
         }
 
 @NonNull
@@ -32,12 +34,12 @@ public ViewHolderInicioClases onCreateViewHolder(@NonNull ViewGroup viewGroup, i
 
 @Override
 public void onBindViewHolder(@NonNull ViewHolderInicioClases viewHolderCursos, int i) {
-        viewHolderCursos.asignarDatos(cursos.get(i));
+        viewHolderCursos.asignarDatos(clases_array.get(i));
         }
 
 @Override
 public int getItemCount() {
-        return cursos.size();
+        return clases_array.size();
         }
 
 public class ViewHolderInicioClases extends RecyclerView.ViewHolder {
@@ -48,13 +50,17 @@ public class ViewHolderInicioClases extends RecyclerView.ViewHolder {
         super(itemView);
 
         fecha = (TextView) itemView.findViewById(R.id.tv_list_inicio_c_fecha);
+        hora = (TextView) itemView.findViewById(R.id.tv_list_inicio_c_hora);
         status = (TextView) itemView.findViewById(R.id.tv_list_inicio_c_status);
         nombre = (TextView) itemView.findViewById(R.id.tv_list_inicio_c_nombre);
-        hora = (TextView) itemView.findViewById(R.id.tv_list_inicio_c_hora);
+
     }
 
-    public void asignarDatos(String dato) {
-        nombre.setText(dato);
+    public void asignarDatos(Clases clase) {
+        hora.setText(clase.getHora());
+        fecha.setText(clase.getFecha());
+        status.setText(clase.getStatus());
+        nombre.setText(clase.getNombre_curso());
     }
 }
 }

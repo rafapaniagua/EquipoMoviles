@@ -7,14 +7,28 @@ public class Clases {
     private String descripcion;
     private String status;
     private int id_grupo;
+    private String nombre_curso;
 
-    public Clases(int id_clase, String fecha, String hora, String descripcion, String status, int id_grupo) {
+    public Clases (){
+
+    }
+
+    public Clases(int id_clase, String fecha, String hora, String descripcion, String status, int id_grupo, String nombre_curso) {
         this.id_clase = id_clase;
         this.fecha = fecha;
         this.hora = hora;
         this.descripcion = descripcion;
         this.status = status;
         this.id_grupo = id_grupo;
+        this.nombre_curso = nombre_curso;
+    }
+
+    public String getNombre_curso() {
+        return nombre_curso;
+    }
+
+    public void setNombre_curso(String nombre_curso) {
+        this.nombre_curso = nombre_curso;
     }
 
     public int getId_clase() {
