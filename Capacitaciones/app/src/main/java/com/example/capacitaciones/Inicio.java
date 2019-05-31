@@ -14,6 +14,7 @@ public class Inicio extends AppCompatActivity {
 
     ArrayList<String> nombres;
     RecyclerView rv_grupos, rv_clases;
+    String is_admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +44,59 @@ public class Inicio extends AppCompatActivity {
         rv_clases.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         //RECIBIMOS LOS PARAMETROS
-        String is_admin = this.getIntent().getExtras().getString("is_admin");
+        is_admin = this.getIntent().getExtras().getString("is_admin");
 
+        Toast.makeText(this, "Admin?: "+is_admin, Toast.LENGTH_SHORT).show();
     }
 
     public void salir(View v){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         this.finish();
+    }
+
+    public void irInicio(View v){
+        Intent intent = new Intent(this, Inicio.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irGrupos(View v){
+        Intent intent = new Intent(this, ListGrupo.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irCursos(View v){
+        Intent intent = new Intent(this, ListCurso.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irUsuarios(View v){
+        /*Intent intent = new Intent(this, ListUsuario.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();*/
+
+        Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+    }
+
+    public void irNotificaciones(View v){
+        /*Intent intent = new Intent(this, ListNotificaciones.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();*/
+
+        Toast.makeText(this, "Ir a Notificaciones", Toast.LENGTH_SHORT).show();
     }
 }
 

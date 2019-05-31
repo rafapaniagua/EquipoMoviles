@@ -1,9 +1,12 @@
 package com.example.capacitaciones;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,7 @@ public class ListGrupo extends AppCompatActivity {
 
     ArrayList<String> nombres;
     RecyclerView rv_grupos;
+    String is_admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +37,60 @@ public class ListGrupo extends AppCompatActivity {
         AdapterGrupos adapter = new AdapterGrupos(this, nombres);
         rv_grupos.setAdapter(adapter);
         rv_grupos.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        //RECIBIMOS LOS PARAMETROS
+        is_admin = this.getIntent().getExtras().getString("is_admin");
+
+        Toast.makeText(this, "Admin?: "+is_admin, Toast.LENGTH_SHORT).show();
+    }
+
+    public void salir(View v){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        this.finish();
+    }
+
+    public void irInicio(View v){
+        Intent intent = new Intent(this, Inicio.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irGrupos(View v){
+        Intent intent = new Intent(this, ListGrupo.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irCursos(View v){
+        Intent intent = new Intent(this, ListCurso.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irUsuarios(View v){
+        /*Intent intent = new Intent(this, ListUsuario.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();*/
+
+        Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+    }
+
+    public void irNotificaciones(View v){
+        /*Intent intent = new Intent(this, ListNotificaciones.class);
+        intent.putExtra("is_admin", is_admin);
+        startActivity(intent);
+
+        this.finish();*/
+
+        Toast.makeText(this, "Ir a Notificaciones", Toast.LENGTH_SHORT).show();
     }
 }
