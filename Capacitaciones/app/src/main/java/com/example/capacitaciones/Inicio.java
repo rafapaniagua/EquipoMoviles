@@ -19,11 +19,11 @@ import java.util.ArrayList;
 
 public class Inicio extends AppCompatActivity {
 
-    ArrayList<Clases> clases_array;
-    ArrayList<Grupos> grupos_array;
-    RecyclerView rv_grupos, rv_clases;
-    TextView tv_nombre_usuario;
-    String is_admin, id_usuario, nombreCompleto;
+    private ArrayList<Clases> clases_array;
+    private ArrayList<Grupos> grupos_array;
+    private RecyclerView rv_grupos, rv_clases;
+    private TextView tv_nombre_usuario;
+    private String is_admin, id_usuario, nombreCompleto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +142,14 @@ public class Inicio extends AppCompatActivity {
         this.finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        this.finish();
+    }
+
     public void irInicio(View v){
         Intent intent = new Intent(this, Inicio.class);
         intent.putExtra("is_admin", is_admin);
@@ -163,16 +171,21 @@ public class Inicio extends AppCompatActivity {
     }
 
     public void irCursos(View v){
-        Intent intent = new Intent(this, ListCurso.class);
-        intent.putExtra("is_admin", is_admin);
-        intent.putExtra("id_usuario", id_usuario);
-        intent.putExtra("nombreCompleto", nombreCompleto);
-        startActivity(intent);
+        if(is_admin.equals("true")) {
+            Intent intent = new Intent(this, ListCurso.class);
+            intent.putExtra("is_admin", is_admin);
+            intent.putExtra("id_usuario", id_usuario);
+            intent.putExtra("nombreCompleto", nombreCompleto);
+            startActivity(intent);
 
-        this.finish();
+            this.finish();
+        }else{
+            Toast.makeText(this, "Lo siento, pero no tienes acceso", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void irUsuarios(View v){
+        if(is_admin.equals("true")) {
         /*Intent intent = new Intent(this, ListUsuario.class);
         intent.putExtra("is_admin", is_admin);
         intent.putExtra("id_usuario", id_usuario);
@@ -181,7 +194,10 @@ public class Inicio extends AppCompatActivity {
 
         this.finish();*/
 
-        Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Lo siento, pero no tienes acceso", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void irNotificaciones(View v){

@@ -53,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="irInicio"
             android:text="@string/menu_inicio"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -64,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="irGrupos"
             android:text="@string/menu_grupo"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -75,6 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="irCursos"
             android:text="@string/menu_curso"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -86,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="irUsuarios"
             android:text="@string/menu_usuario"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -105,6 +109,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
+            android:onClick="irNotificaciones"
             app:srcCompat="@drawable/icono_notificacion" />
 
         <ImageView
@@ -113,6 +118,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
+            android:onClick="salir"
             app:srcCompat="@drawable/icono_salir" />
 
     </TableRow>
@@ -196,15 +202,17 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_green_light"
+                    android:onClick="irInicio"
                     android:text="@string/curso_list_btnregresar" />
 
                 <Button
-                    android:id="@+id/btn_agregar"
+                    android:id="@+id/btn_curso_agregar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_orange_dark"
+                    android:onClick="newCurso"
                     android:text="@string/curso_list_btnagregar" />
             </TableRow>
         </LinearLayout>

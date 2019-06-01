@@ -228,7 +228,7 @@
                     android:text="@string/grupo_list_btnregresar" />
 
                 <Button
-                    android:id="@+id/btn_agregar"
+                    android:id="@+id/btn_curso_agregar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
