@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capacitaciones.BaseDeDatos.AdminSQliteOpenHelper;
@@ -21,7 +22,8 @@ public class Inicio extends AppCompatActivity {
     ArrayList<Clases> clases_array;
     ArrayList<Grupos> grupos_array;
     RecyclerView rv_grupos, rv_clases;
-    String is_admin, id_usuario;
+    TextView tv_nombre_usuario;
+    String is_admin, id_usuario, nombreCompleto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,11 @@ public class Inicio extends AppCompatActivity {
         //RECIBIMOS LOS PARAMETROS
         is_admin = this.getIntent().getExtras().getString("is_admin");
         id_usuario = this.getIntent().getExtras().getString("id_usuario");
+        nombreCompleto = this.getIntent().getExtras().getString("nombreCompleto");
+
+        //MOSTRAMOS EN LA PANTALLA EL NOMBRE DEL USUARIO ACTUAL
+        tv_nombre_usuario = (TextView) findViewById(R.id.tv_nombre_usuario);
+        tv_nombre_usuario.setText(nombreCompleto);
 
         mostrarClases();
         mostrarGrupos();
@@ -138,6 +145,8 @@ public class Inicio extends AppCompatActivity {
     public void irInicio(View v){
         Intent intent = new Intent(this, Inicio.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
 
         this.finish();
@@ -146,6 +155,8 @@ public class Inicio extends AppCompatActivity {
     public void irGrupos(View v){
         Intent intent = new Intent(this, ListGrupo.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
 
         this.finish();
@@ -154,6 +165,8 @@ public class Inicio extends AppCompatActivity {
     public void irCursos(View v){
         Intent intent = new Intent(this, ListCurso.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
 
         this.finish();
@@ -162,6 +175,8 @@ public class Inicio extends AppCompatActivity {
     public void irUsuarios(View v){
         /*Intent intent = new Intent(this, ListUsuario.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
 
         this.finish();*/
@@ -172,6 +187,8 @@ public class Inicio extends AppCompatActivity {
     public void irNotificaciones(View v){
         /*Intent intent = new Intent(this, ListNotificaciones.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
 
         this.finish();*/

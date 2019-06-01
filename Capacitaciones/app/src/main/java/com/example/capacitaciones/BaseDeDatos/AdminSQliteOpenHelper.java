@@ -9,11 +9,11 @@ public class AdminSQliteOpenHelper extends SQLiteOpenHelper {
     private String tablas [] = {
             "CREATE TABLE cursos(id_curso INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(50), descripcion VARCHAR(200), fecha_creacion VARCHAR(20), duracion VARCHAR(50));",
             "CREATE TABLE usuarios( id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres VARCHAR(60), apellidos VARCHAR(60), correo VARCHAR(20), contrasena VARCHAR(15), is_admin VARCHAR(15));",
-            "CREATE TABLE grupos( id_grupo INTEGER PRIMARY KEY AUTOINCREMENT, clave VARCHAR(20), status VARCHAR(20),  no_integrantes INT, fecha_inicio VARCHAR(15), fecha_fin VARCHAR(15), id_curso INTEGER, FOREIGN KEY (id_curso) REFERENCES cursos(id_curso));",
-            "CREATE TABLE clases(id_clase INTEGER PRIMARY KEY AUTOINCREMENT, fecha VARCHAR(15), hora VARCHAR(15), descripcion VARCHAR(200), status VARCHAR(20), id_grupo INTEGER, FOREIGN KEY (id_grupo) REFERENCES grupos(id_grupo));",
-            "CREATE TABLE notificaciones(id_notificacion INTEGER PRIMARY KEY AUTOINCREMENT, fecha_hora_creacion VARCHAR(20), descripcion VARCHAR(200), status VARCHAR(20), id_grupo INTEGER, id_clase INTEGER, id_usuario INTEGER, FOREIGN KEY (id_grupo) REFERENCES grupos(id_grupo), FOREIGN KEY (id_clase) REFERENCES clases(id_clase), FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario));",
-            "CREATE TABLE rol( rol VARCHAR(25), id_grupo INTEGER, id_usuario INTEGER, FOREIGN KEY (id_grupo) REFERENCES grupos(id_grupo), FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario), PRIMARY KEY (id_grupo, id_usuario));",
-            "CREATE TABLE confirmacion( asistencia VARCHAR(15), id_clase INTEGER, id_usuario INTEGER, FOREIGN KEY (id_clase) REFERENCES clases(id_clase), FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario), PRIMARY KEY (id_clase, id_usuario));"
+            "CREATE TABLE grupos( id_grupo INTEGER PRIMARY KEY AUTOINCREMENT, clave VARCHAR(20), status VARCHAR(20),  no_integrantes INT, fecha_inicio VARCHAR(15), fecha_fin VARCHAR(15), id_curso INTEGER, FOREIGN KEY (id_curso) REFERENCES cursos(id_curso) ON DELETE CASCADE ON UPDATE CASCADE);",
+            "CREATE TABLE clases(id_clase INTEGER PRIMARY KEY AUTOINCREMENT, fecha VARCHAR(15), hora VARCHAR(15), descripcion VARCHAR(200), status VARCHAR(20), id_grupo INTEGER, FOREIGN KEY (id_grupo) REFERENCES grupos(id_grupo) ON DELETE CASCADE ON UPDATE CASCADE);",
+            "CREATE TABLE notificaciones(id_notificacion INTEGER PRIMARY KEY AUTOINCREMENT, fecha_hora_creacion VARCHAR(20), descripcion VARCHAR(200), status VARCHAR(20), id_grupo INTEGER, id_clase INTEGER, id_usuario INTEGER, FOREIGN KEY (id_grupo) REFERENCES grupos(id_grupo) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (id_clase) REFERENCES clases(id_clase) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE ON UPDATE CASCADE);",
+            "CREATE TABLE rol( rol VARCHAR(25), id_grupo INTEGER, id_usuario INTEGER, FOREIGN KEY (id_grupo) REFERENCES grupos(id_grupo) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (id_grupo, id_usuario));",
+            "CREATE TABLE confirmacion( asistencia VARCHAR(15), id_clase INTEGER, id_usuario INTEGER, FOREIGN KEY (id_clase) REFERENCES clases(id_clase) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (id_clase, id_usuario));"
     };
 
     private String inserts [] = {
@@ -32,7 +32,7 @@ public class AdminSQliteOpenHelper extends SQLiteOpenHelper {
             "INSERT INTO grupos VALUES(null, 'G-001', 'Activo', 10, '2019-05-24', '2019-06-24', 1);",
             "INSERT INTO grupos VALUES(null, 'G-002', 'Finalizado', 5, '2019-05-24', '2019-06-24', 2);",
             "INSERT INTO grupos VALUES(null, 'G-003', 'Activo', 15, '2019-05-24', '2019-06-24', 3);",
-            "INSERT INTO grupos VALUES(null, 'G-004', 'Cerrado', 20, '2019-05-24', '2019-06-24', 4);",
+            "INSERT INTO grupos VALUES(null, 'G-004', 'Finalizado', 20, '2019-05-24', '2019-06-24', 4);",
             "INSERT INTO grupos VALUES(null, 'G-005', 'Activo', 8, '2019-05-24', '2019-06-24', 5);",
 
             "INSERT INTO clases VALUES(null, '2019-05-30', '16:00:00', 'Inducción al Curso', 'Activa', 1);",

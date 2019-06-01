@@ -56,7 +56,8 @@
             android:text="@string/menu_inicio"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irInicio" />
 
         <TextView
             android:id="@+id/tv_grupo"
@@ -67,7 +68,8 @@
             android:text="@string/menu_grupo"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irGrupos" />
 
         <TextView
             android:id="@+id/tv_curso"
@@ -78,7 +80,8 @@
             android:text="@string/menu_curso"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irCursos" />
 
         <TextView
             android:id="@+id/tv_usuario"
@@ -89,7 +92,8 @@
             android:text="@string/menu_usuario"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irUsuarios" />
     </TableRow>
 
     <TableRow
@@ -105,6 +109,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
+            android:onClick="irNotificaciones"
             app:srcCompat="@drawable/icono_notificacion" />
 
         <ImageView
@@ -113,6 +118,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
+            android:onClick="salir"
             app:srcCompat="@drawable/icono_salir" />
     </TableRow>
 
@@ -155,7 +161,7 @@
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="@string/grupo_clave"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -293,6 +299,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_green_light"
+                    android:onClick="irGrupos"
                     android:text="@string/grupo_btn_cancelar" />
 
                 <Button

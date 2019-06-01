@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //VERFICAMOS QUE LOS CAMPOS NO ESTEN VACIOS
         if(!correo.isEmpty() && !contrasena.isEmpty()){
             //EJECUTAMOS CONSULTA DE DATOS
-            Cursor fila = BaseDeDatos.rawQuery("select contrasena, is_admin, id_usuario from usuarios where correo = '" + correo + "';", null);
+            Cursor fila = BaseDeDatos.rawQuery("select contrasena, is_admin, id_usuario, nombres, apellidos from usuarios where correo = '" + correo + "';", null);
 
             //VERIFICAMOS QUE LA CONSULTA REGRESE ALGO
             if(fila.moveToFirst()){
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, Inicio.class);
                     intent.putExtra("is_admin", fila.getString(1));
                     intent.putExtra("id_usuario", fila.getString(2));
+                    intent.putExtra("nombreCompleto", fila.getString(3)+" "+fila.getString(4));
                     startActivity(intent);
 
                     //CERRAMOS EL ACTIVITY ACTUAL

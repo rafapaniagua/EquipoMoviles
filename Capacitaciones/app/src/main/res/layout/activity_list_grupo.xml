@@ -234,6 +234,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_orange_dark"
+                    android:onClick="irNuevoGrupo"
                     android:text="@string/grupo_list_btnagregar" />
             </TableRow>
         </LinearLayout>
