@@ -1,6 +1,8 @@
 package com.example.capacitaciones;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,7 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.capacitaciones.BaseDeDatos.AdminSQliteOpenHelper;
+import com.example.capacitaciones.Modelos.Grupos;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListGrupo extends AppCompatActivity {
 
@@ -20,6 +26,37 @@ public class ListGrupo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_grupo);
+
+        //CREAMOS LA CONEXIÓN CON NUESTRA CLASE DE BASE DE DATOS
+        AdminSQliteOpenHelper admin = new AdminSQliteOpenHelper(this, "rhinoSystems", null, 1);
+
+        //PONEMOS LA BASE DE DATOS EN MODO LECTURA Y ESCRITURA
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+        Cursor filas = BaseDeDatos.rawQuery("select gru.clave, cur.nombre, usu.nombres, usu.apellidos, gru.no_integrantes from grupos as gru " +
+                                                "join cursos as cur on gru.id_curso = cur.id_curso " +
+                                                "join rol as ro on ro.id_grupo = gru.id_grupo " +
+                                                "join usuarios as usu on ro.id_usuario = usu.id_usuario " +
+                                                "where ro.rol = 'Docente';", null);
+
+        String test = "";
+
+        if(filas.getCount() > 0){
+            while(filas.moveToNext()){
+
+
+                /*grupo.setId_grupo(filas.getInt(0));
+                grupo.setId_curso();*/
+
+                test += filas.getString(0)+", ";
+                test += filas.getString(1)+", ";
+                test += filas.getString(2)+" "+filas.getString(3)+", ";
+                test += filas.getInt(4)+"\n";
+
+            }
+        }
+
+        Toast.makeText(this, test, Toast.LENGTH_LONG).show();
 
         nombres = new ArrayList<String>();
 
@@ -42,7 +79,7 @@ public class ListGrupo extends AppCompatActivity {
         is_admin = this.getIntent().getExtras().getString("is_admin");
         id_usuario = this.getIntent().getExtras().getString("id_usuario");
 
-        Toast.makeText(this, "Admin?: "+is_admin, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Admin?: "+is_admin, Toast.LENGTH_SHORT).show();
     }
 
     public void salir(View v){
@@ -70,23 +107,29 @@ public class ListGrupo extends AppCompatActivity {
     }
 
     public void irCursos(View v){
-        Intent intent = new Intent(this, ListCurso.class);
-        intent.putExtra("is_admin", is_admin);
-        intent.putExtra("id_usuario", id_usuario);
-        startActivity(intent);
+        if(is_admin.equals("true")) {
+            Intent intent = new Intent(this, ListCurso.class);
+            intent.putExtra("is_admin", is_admin);
+            startActivity(intent);
 
-        this.finish();
+            this.finish();
+        }else{
+            Toast.makeText(this, "No tiene permisos para acceder a este menú", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void irUsuarios(View v){
-        /*Intent intent = new Intent(this, ListUsuario.class);
-        intent.putExtra("is_admin", is_admin);
-        intent.putExtra("id_usuario", id_usuario);
-        startActivity(intent);
+        if(is_admin.equals("true")) {
+            /*Intent intent = new Intent(this, ListUsuario.class);
+            intent.putExtra("is_admin", is_admin);
+            startActivity(intent);
 
-        this.finish();*/
+            this.finish();*/
 
-        Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "No tiene permisos para acceder a este menú", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void irNotificaciones(View v){

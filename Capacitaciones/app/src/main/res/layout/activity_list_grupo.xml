@@ -224,6 +224,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_green_light"
+                    android:onClick="irInicio"
                     android:text="@string/grupo_list_btnregresar" />
 
                 <Button
