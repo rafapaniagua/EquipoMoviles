@@ -66,9 +66,9 @@ public class AdapterGrupos extends RecyclerView.Adapter<AdapterGrupos.ViewHolder
             docente = (TextView) itemView.findViewById(R.id.tv_list_grupo_docente);
             integrantes = (TextView) itemView.findViewById(R.id.tv_list_grupo_integrantes);
 
-            ver = (ImageView) itemView.findViewById(R.id.iv_ver);
-            editar = (ImageView) itemView.findViewById(R.id.iv_editar);
-            eliminar = (ImageView) itemView.findViewById(R.id.iv_eliminar);
+            ver = (ImageView) itemView.findViewById(R.id.iv_list_grupo_ver);
+            editar = (ImageView) itemView.findViewById(R.id.iv_list_grupo_editar);
+            eliminar = (ImageView) itemView.findViewById(R.id.iv_list_grupo_eliminar);
         }
 
         public void asignarDatos(final Grupos grupo) {

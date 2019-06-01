@@ -57,7 +57,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/iv_list_curso_ver"
+                android:id="@+id/iv_list_grupo_ver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -65,7 +65,7 @@
                 app:srcCompat="@drawable/icono_ver" />
 
             <ImageView
-                android:id="@+id/iv_list_curso_editar"
+                android:id="@+id/iv_list_grupo_editar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -73,7 +73,7 @@
                 app:srcCompat="@drawable/icono_editar" />
 
             <ImageView
-                android:id="@+id/iv_list_curso_eliminar"
+                android:id="@+id/iv_list_grupo_eliminar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

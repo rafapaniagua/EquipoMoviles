@@ -51,8 +51,8 @@ public class AddGrupo extends AppCompatActivity {
         tv_nombre_usuario.setText(nombreCompleto);
 
         //RELACIONAMOS LOS ELEMENTOS DE LA VISTA CON SUS VARIABLES
-        tv_titulo = (TextView) findViewById(R.id.tv_titulo);
-        btn_agregar = (Button) findViewById(R.id.btn_agregar);
+        tv_titulo = (TextView) findViewById(R.id.tv_grupo_titulo);
+        btn_agregar = (Button) findViewById(R.id.btn_grupo_agregar);
         sp_grupo_curso =(Spinner) findViewById(R.id.sp_grupo_curso);
         sp_grupo_docente =(Spinner) findViewById(R.id.sp_grupo_docente);
         sp_grupo_status =(Spinner) findViewById(R.id.sp_grupo_status);

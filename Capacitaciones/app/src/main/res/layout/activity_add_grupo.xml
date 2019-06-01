@@ -123,7 +123,7 @@
     </TableRow>
 
     <TextView
-        android:id="@+id/tv_curso_titulo"
+        android:id="@+id/tv_grupo_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -303,7 +303,7 @@
                     android:text="@string/grupo_btn_cancelar" />
 
                 <Button
-                    android:id="@+id/btn_curso_agregar"
+                    android:id="@+id/btn_grupo_agregar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
