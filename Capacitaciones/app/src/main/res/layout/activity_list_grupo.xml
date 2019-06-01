@@ -224,15 +224,17 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_green_light"
+                    android:onClick="irInicio"
                     android:text="@string/grupo_list_btnregresar" />
 
                 <Button
-                    android:id="@+id/btn_agregar"
+                    android:id="@+id/btn_curso_agregar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_orange_dark"
+                    android:onClick="irNuevoGrupo"
                     android:text="@string/grupo_list_btnagregar" />
             </TableRow>
         </LinearLayout>

@@ -8,6 +8,10 @@ public class Usuarios {
     private String contrasena;
     private String is_admin;
 
+    public Usuarios(){
+
+    }
+
     public Usuarios(int id_usuario, String nombres, String apellidos, String correo, String contrasena, String is_admin) {
         this.id_usuario = id_usuario;
         this.nombres = nombres;

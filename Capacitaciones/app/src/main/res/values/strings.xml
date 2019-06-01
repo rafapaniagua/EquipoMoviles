@@ -80,7 +80,7 @@
     <string name="inicio_list_nombre">Nombre Curso</string>
     <string name="inicio_list_clave">Clave</string>
     <string name="inicio_list_status">Status</string>
-    <string name="inicio_list_responsable">Responsable</string>
+    <string name="inicio_list_responsable">Docente</string>
     <string name="inicio_list_btnvermas">Ver Mas</string>
 
     <string name="inicio_list_clase_nombre">Nombre Curso</string>
@@ -88,4 +88,5 @@
     <string name="inicio_list_clase_hora">Hora</string>
     <string name="inicio_list_clase_status">Status</string>
     <string name="inicio_list_clase_btnvermas">Ver Mas</string>
+
 </resources>

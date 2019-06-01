@@ -41,83 +41,8 @@
             android:text="@string/menu_nombreU" />
     </TableRow>
 
-    <TableRow
-        android:id="@+id/tr_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tv_inicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/menu_inicio"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_grupo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/menu_grupo"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_curso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/menu_curso"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/menu_usuario"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tr_notificaciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/iv_notificacion"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-            android:contentDescription="@string/vacio"
-            app:srcCompat="@drawable/icono_notificacion" />
-
-        <ImageView
-            android:id="@+id/iv_salir"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-            android:contentDescription="@string/vacio"
-            app:srcCompat="@drawable/icono_salir" />
-    </TableRow>
-
     <TextView
-        android:id="@+id/tv_titulo"
+        android:id="@+id/tv_curso_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -146,7 +71,8 @@
                 android:layout_margin="5dp"
                 android:text="@string/curso_nombre"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nombre"
@@ -166,7 +92,8 @@
                 android:layout_margin="5dp"
                 android:text="@string/curso_duracion"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_duracion"
@@ -186,7 +113,8 @@
                 android:layout_margin="5dp"
                 android:text="@string/curso_descripcion"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_descripcion"
@@ -206,7 +134,8 @@
                 android:layout_margin="5dp"
                 android:text="@string/curso_fecha"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_fecha"
@@ -215,7 +144,7 @@
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="@string/curso_fecha"
-                android:inputType="date"
+                android:inputType="text"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -231,15 +160,17 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_green_light"
+                    android:onClick="cancelar"
                     android:text="@string/curso_btn_cancelar" />
 
                 <Button
-                    android:id="@+id/btn_agregar"
+                    android:id="@+id/btn_curso_agregar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_orange_dark"
+                    android:onClick="agregar"
                     android:text="@string/curso_btn_crear" />
             </TableRow>
         </LinearLayout>

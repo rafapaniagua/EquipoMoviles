@@ -9,6 +9,12 @@ public class Grupos {
     private String fecha_fin;
     private int no_integrantes;
     private int id_curso;
+    private String docente;
+    private String nombre_curso;
+
+    public Grupos (){
+
+    }
 
     public Grupos(int id_grupo, String clave, String status, String fecha_inicio, String fecha_fin, int no_integrantes, int id_curso) {
         this.id_grupo = id_grupo;
@@ -18,6 +24,22 @@ public class Grupos {
         this.fecha_fin = fecha_fin;
         this.no_integrantes = no_integrantes;
         this.id_curso = id_curso;
+    }
+
+    public String getDocente() {
+        return docente;
+    }
+
+    public void setDocente(String docente) {
+        this.docente = docente;
+    }
+
+    public String getNombre_curso() {
+        return nombre_curso;
+    }
+
+    public void setNombre_curso(String nombre_curso) {
+        this.nombre_curso = nombre_curso;
     }
 
     public int getId_grupo() {
