@@ -11,6 +11,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".ListClase"></activity>
         <activity android:name=".AddClase" />
+        <activity android:name=".AddRegistroUsuarios" />
         <activity android:name=".ListGrupo" />
         <activity android:name=".AddGrupo" />
         <activity android:name=".ListCurso" />

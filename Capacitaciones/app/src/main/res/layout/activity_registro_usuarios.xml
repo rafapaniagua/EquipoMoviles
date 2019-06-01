@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".AddRegistroUsuarios">
     <TableRow
         android:id="@+id/tr_barra"
         android:layout_width="match_parent"
@@ -53,7 +54,6 @@
             android:layout_margin="5dp"
             android:ems="10"
             android:hint="@string/registro_nombre"
-            android:inputType="number"
             android:textColor="#000000"
             android:textSize="18sp" />
 
@@ -87,34 +87,35 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/et_fecha_inicio"
+            android:id="@+id/et_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:ems="10"
             android:hint="@string/registro_correo"
-            android:inputType="date"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_registro_rol"
+            android:id="@+id/tv_contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="@string/registro_rol"
+            android:text="@string/login_contrasena"
             android:textColor="#000000"
             android:textSize="18sp" />
 
-        <Spinner
-            android:id="@+id/et_select_puesto"
+        <EditText
+            android:id="@+id/et_contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
             android:ems="10"
-            android:hint="@string/grupo_curso"
-            android:textColor="#000000"
-            android:textSize="18sp"></Spinner>
+            android:hint="@string/login_contrasena"
+            android:inputType="textPassword"
+            android:text="@string/vacio" />
 
         <TableRow
             android:id="@+id/tr_botones"
@@ -128,6 +129,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_green_light"
+                android:onClick="cancelar"
                 android:text="@string/grupo_btn_cancelar" />
 
             <Button
