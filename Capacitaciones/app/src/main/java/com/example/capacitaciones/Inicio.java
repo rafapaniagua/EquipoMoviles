@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capacitaciones.BaseDeDatos.AdminSQliteOpenHelper;
@@ -18,10 +19,10 @@ import java.util.ArrayList;
 
 public class Inicio extends AppCompatActivity {
 
-    ArrayList<Clases> clases_array;
-    ArrayList<Grupos> grupos_array;
-    RecyclerView rv_grupos, rv_clases;
-    String is_admin, id_usuario;
+    private ArrayList<Clases> clases_array;
+    private ArrayList<Grupos> grupos_array;
+    private RecyclerView rv_grupos, rv_clases;
+    private String is_admin, id_usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,9 +136,18 @@ public class Inicio extends AppCompatActivity {
         this.finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        this.finish();
+    }
+
     public void irInicio(View v){
         Intent intent = new Intent(this, Inicio.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();
@@ -146,32 +156,44 @@ public class Inicio extends AppCompatActivity {
     public void irGrupos(View v){
         Intent intent = new Intent(this, ListGrupo.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();
     }
 
     public void irCursos(View v){
-        Intent intent = new Intent(this, ListCurso.class);
-        intent.putExtra("is_admin", is_admin);
-        startActivity(intent);
+        if(is_admin.equals("true")) {
+            Intent intent = new Intent(this, ListCurso.class);
+            intent.putExtra("is_admin", is_admin);
+            intent.putExtra("id_usuario", id_usuario);
+            startActivity(intent);
 
-        this.finish();
+            this.finish();
+        }else{
+            Toast.makeText(this, "Lo siento, pero no tienes acceso", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void irUsuarios(View v){
+        if(is_admin.equals("true")) {
         /*Intent intent = new Intent(this, ListUsuario.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();*/
 
-        Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Lo siento, pero no tienes acceso", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void irNotificaciones(View v){
         /*Intent intent = new Intent(this, ListNotificaciones.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();*/

@@ -14,7 +14,7 @@ public class ListGrupo extends AppCompatActivity {
 
     ArrayList<String> nombres;
     RecyclerView rv_grupos;
-    String is_admin;
+    String is_admin, id_usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class ListGrupo extends AppCompatActivity {
 
         //RECIBIMOS LOS PARAMETROS
         is_admin = this.getIntent().getExtras().getString("is_admin");
+        id_usuario = this.getIntent().getExtras().getString("id_usuario");
 
         Toast.makeText(this, "Admin?: "+is_admin, Toast.LENGTH_SHORT).show();
     }
@@ -53,6 +54,7 @@ public class ListGrupo extends AppCompatActivity {
     public void irInicio(View v){
         Intent intent = new Intent(this, Inicio.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();
@@ -61,6 +63,7 @@ public class ListGrupo extends AppCompatActivity {
     public void irGrupos(View v){
         Intent intent = new Intent(this, ListGrupo.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();
@@ -69,6 +72,7 @@ public class ListGrupo extends AppCompatActivity {
     public void irCursos(View v){
         Intent intent = new Intent(this, ListCurso.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();
@@ -77,6 +81,7 @@ public class ListGrupo extends AppCompatActivity {
     public void irUsuarios(View v){
         /*Intent intent = new Intent(this, ListUsuario.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();*/
@@ -87,6 +92,7 @@ public class ListGrupo extends AppCompatActivity {
     public void irNotificaciones(View v){
         /*Intent intent = new Intent(this, ListNotificaciones.class);
         intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
         this.finish();*/
