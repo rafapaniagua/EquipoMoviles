@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, Inicio.class);
                     intent.putExtra("is_admin", fila.getString(1));
                     intent.putExtra("id_usuario", fila.getString(2));
-                    intent.putExtra("nombreCompleto", fila.getString(3)+" "+fila.getString(4));
+                    intent.putExtra("nombreCompleto", fila.getString(3)+"\n"+fila.getString(4));
                     startActivity(intent);
 
                     //CERRAMOS EL ACTIVITY ACTUAL
