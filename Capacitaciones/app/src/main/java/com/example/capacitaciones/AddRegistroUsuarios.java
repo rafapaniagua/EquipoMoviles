@@ -28,7 +28,7 @@ public class AddRegistroUsuarios extends AppCompatActivity {
         et_apellido = (EditText) findViewById(R.id.et_apellido);
         et_correo = (EditText) findViewById(R.id.et_correo);
         et_contrasena = (EditText) findViewById(R.id.et_contrasena);
-        btn_agregar = (Button) findViewById(R.id.btn_agregar);
+        btn_agregar = (Button) findViewById(R.id.btn_curso_agregar);
         btn_regresar = (Button) findViewById(R.id.btn_regresar);
 
         btn_agregar.setOnClickListener(new View.OnClickListener() {
