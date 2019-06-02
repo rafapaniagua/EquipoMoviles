@@ -1,6 +1,5 @@
 package com.example.capacitaciones;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -76,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Por favor, ingresa usuario y contraseña", Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public void registrar(View v){
+        //Abrir vista para registrar usuario
+        Intent intent = new Intent(this, AddRegistroUsuarios.class);
+        startActivity(intent);
+
+        //CERRAMOS EL ACTIVITY ACTUAL
+        this.finish();
 
     }
 }
