@@ -77,6 +77,25 @@ public class AdapterGrupos extends RecyclerView.Adapter<AdapterGrupos.ViewHolder
             docente.setText(grupo.getDocente());
             integrantes.setText(String.valueOf(grupo.getNo_integrantes()));
 
+            //EVENTO PARA BOTÓN DE VER DETALLE DE GRUPO
+            ver.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), DetalleGrupo.class);
+
+                    intent.putExtra("is_admin", is_admin);
+                    intent.putExtra("id_usuario", id_usuario);
+                    intent.putExtra("nombreCompleto", nombreCompleto);
+                    intent.putExtra("id_grupo", String.valueOf(grupo.getId_grupo()));
+
+                    v.getContext().startActivity(intent);
+
+                    //EL CÓDIGO DE LA LÍNEA DE ABAJO ES EL EQUIVALENTE A this.finish()
+                    //PARA CERRAR EL ACTIVITY ACTUAL DESDE EL ADAPTER
+                    ((Activity) v.getContext()).finish();
+                }
+            });
+
             //EVENTO PARA BOTÓN DE EDITAR GRUPO
             editar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -122,6 +141,7 @@ public class AdapterGrupos extends RecyclerView.Adapter<AdapterGrupos.ViewHolder
 
                         intent.putExtra("is_admin", is_admin);
                         intent.putExtra("id_usuario", id_usuario);
+                        intent.putExtra("nombreCompleto", nombreCompleto);
 
                         v.getContext().startActivity(intent);
 
