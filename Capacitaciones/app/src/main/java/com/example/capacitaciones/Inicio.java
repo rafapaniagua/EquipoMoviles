@@ -104,10 +104,7 @@ public class Inicio extends AppCompatActivity {
                         "join cursos on cursos.id_curso = grupos.id_curso\n" +
                         "join rol on rol.id_grupo = grupos.id_grupo\n" +
                         "join usuarios on usuarios.id_usuario = rol.id_usuario\n" +
-                        "where grupos.id_grupo = (select grupos.id_grupo from grupos\n" +
-                        "join rol on rol.id_grupo = grupos.id_grupo\n" +
-                        "join usuarios on usuarios.id_usuario = rol.id_usuario\n" +
-                        "where usuarios.id_usuario = "+id_usuario+" AND rol.rol = 'Alumno') and rol.rol = 'Docente';"
+                        "where rol.id_usuario = "+id_usuario+";"
                 , null);
 
         if(fila.moveToFirst()){

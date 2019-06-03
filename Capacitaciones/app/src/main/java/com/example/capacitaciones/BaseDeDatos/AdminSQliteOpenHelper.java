@@ -62,7 +62,12 @@ public class AdminSQliteOpenHelper extends SQLiteOpenHelper {
             "INSERT INTO confirmacion VALUES('false', 2, 3);",
             "INSERT INTO confirmacion VALUES('true', 3, 4);",
             "INSERT INTO confirmacion VALUES('false', 4, 5);",
-            "INSERT INTO confirmacion VALUES('true', 5, 1);"
+            "INSERT INTO confirmacion VALUES('true', 5, 1);",
+            "INSERT INTO confirmacion VALUES('true', 1, 1);",
+            "INSERT INTO confirmacion VALUES('true', 2, 2);",
+            "INSERT INTO confirmacion VALUES('true', 3, 3);",
+            "INSERT INTO confirmacion VALUES('true', 4, 4);",
+            "INSERT INTO confirmacion VALUES('true', 5, 5);"
     };
 
     public AdminSQliteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
