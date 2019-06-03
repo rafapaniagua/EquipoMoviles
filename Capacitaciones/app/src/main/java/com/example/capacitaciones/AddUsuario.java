@@ -19,7 +19,8 @@ public class AddUsuario extends AppCompatActivity {
     Button btn_agregar,btn_regresar;
     TextView tv_usuario_titulo;
     int id_usuario_enviado;
-    private String control, is_admin, id_usuario;
+    private String control, is_admin, id_usuario,nombreCompleto;
+    TextView tv_nombre_usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,12 @@ public class AddUsuario extends AppCompatActivity {
         et_apellido = (EditText) findViewById(R.id.et_apellido);
         et_correo = (EditText) findViewById(R.id.et_correo);
         et_contrasena = (EditText) findViewById(R.id.et_contrasena);
+
+        is_admin = this.getIntent().getExtras().getString("is_admin");
+        id_usuario = this.getIntent().getExtras().getString("id_usuario");
+        nombreCompleto = this.getIntent().getExtras().getString("nombreCompleto");
+        tv_nombre_usuario = (TextView) findViewById(R.id.tv_nombre_usuario);
+        tv_nombre_usuario.setText(nombreCompleto);
 
         tv_usuario_titulo = (TextView) findViewById(R.id.tv_usuario_titulo);
 
@@ -120,5 +127,72 @@ public class AddUsuario extends AppCompatActivity {
                 Toast.makeText(this, "Por favor completa la información", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+    public void salir(View v){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        this.finish();
+    }
+
+    public void irInicio(View v){
+        Intent intent = new Intent(this, Inicio.class);
+        intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irGrupos(View v){
+        Intent intent = new Intent(this, ListGrupo.class);
+        intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
+        startActivity(intent);
+
+        this.finish();
+    }
+
+    public void irCursos(View v){
+        if(is_admin.equals("true")) {
+            Intent intent = new Intent(this, ListCurso.class);
+            intent.putExtra("is_admin", is_admin);
+            intent.putExtra("id_usuario", id_usuario);
+            intent.putExtra("nombreCompleto", nombreCompleto);
+            startActivity(intent);
+
+            this.finish();
+        }else{
+            Toast.makeText(this, "No tiene permisos para acceder a este menú", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void irUsuarios(View v){
+        if(is_admin.equals("true")) {
+            Intent intent = new Intent(this, ListUsuario.class);
+            intent.putExtra("is_admin", is_admin);
+            intent.putExtra("id_usuario", id_usuario);
+            intent.putExtra("nombreCompleto", nombreCompleto);
+            startActivity(intent);
+
+            this.finish();
+
+            Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "No tiene permisos para acceder a este menú", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void irNotificaciones(View v){
+        Intent intent = new Intent(this, ListNotificaciones.class);
+        intent.putExtra("is_admin", is_admin);
+        intent.putExtra("id_usuario", id_usuario);
+        intent.putExtra("nombreCompleto", nombreCompleto);
+        startActivity(intent);
+
+        this.finish();
+
+        Toast.makeText(this, "Ir a Notificaciones", Toast.LENGTH_SHORT).show();
     }
 }

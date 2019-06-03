@@ -81,7 +81,7 @@ public class AdapterClases extends RecyclerView.Adapter<AdapterClases.ViewHolder
             ver.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /*Intent intent = new Intent(v.getContext(), DetalleClase.class);
+                    Intent intent = new Intent(v.getContext(), DetalleClase.class);
 
                     intent.putExtra("is_admin", is_admin);
                     intent.putExtra("id_usuario", id_usuario);
@@ -95,7 +95,7 @@ public class AdapterClases extends RecyclerView.Adapter<AdapterClases.ViewHolder
 
                     //EL CÓDIGO DE LA LÍNEA DE ABAJO ES EL EQUIVALENTE A this.finish()
                     //PARA CERRAR EL ACTIVITY ACTUAL DESDE EL ADAPTER
-                    ((Activity) v.getContext()).finish();*/
+                    ((Activity) v.getContext()).finish();
 
                     Toast.makeText(((Activity) v.getContext()), "IR A DETALLE DE CLASE", Toast.LENGTH_SHORT).show();
                 }

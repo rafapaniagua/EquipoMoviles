@@ -126,12 +126,12 @@ public class ListCurso extends AppCompatActivity {
     }
 
     public void irNotificaciones(View v){
-        /*Intent intent = new Intent(this, ListNotificaciones.class);
+        Intent intent = new Intent(this, ListNotificaciones.class);
         intent.putExtra("is_admin", is_admin);
         intent.putExtra("id_usuario", id_usuario);
         startActivity(intent);
 
-        this.finish();*/
+        this.finish();
 
         Toast.makeText(this, "Ir a Notificaciones", Toast.LENGTH_SHORT).show();
     }

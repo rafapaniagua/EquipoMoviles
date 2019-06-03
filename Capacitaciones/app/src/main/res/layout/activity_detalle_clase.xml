@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddUsuario"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".DetalleClase">
 
     <TableRow
         android:id="@+id/tr_barra"
@@ -54,10 +54,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/menu_inicio"
-            android:onClick="irInicio"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irInicio"/>
 
         <TextView
             android:id="@+id/tv_grupo"
@@ -66,10 +66,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/menu_grupo"
-            android:onClick="irGrupos"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irGrupos"/>
 
         <TextView
             android:id="@+id/tv_curso"
@@ -78,10 +78,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/menu_curso"
-            android:onClick="irCursos"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irCursos"/>
 
         <TextView
             android:id="@+id/tv_usuario"
@@ -90,10 +90,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/menu_usuario"
-            android:onClick="irUsuarios"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="irUsuarios"/>
     </TableRow>
 
     <TableRow
@@ -101,7 +101,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
-        android:onClick="irNotificaciones"
         android:orientation="horizontal">
 
         <ImageView
@@ -110,6 +109,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
+            android:onClick="irNotificaciones"
             app:srcCompat="@drawable/icono_notificacion" />
 
         <ImageView
@@ -120,108 +120,89 @@
             android:contentDescription="@string/vacio"
             android:onClick="salir"
             app:srcCompat="@drawable/icono_salir" />
+
     </TableRow>
+
     <TextView
-        android:id="@+id/tv_usuario_titulo"
+        android:id="@+id/tv_detalle_curso_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/usuarios_title"
-        android:textColor="#000000"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/detalle_clase_title"
+        android:textColor="#FA000000"
         android:textSize="24sp"
         android:textStyle="bold" />
-    <LinearLayout
-        android:id="@+id/tv_select_tol"
+
+    <TextView
+        android:id="@+id/tv_detalle_clase_fecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/detalle_clase_fecha_hora"
+        android:textColor="#FA000000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tv_registro_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/registro_nombre"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv_info_detalle_clase_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/detalle_clase_fecha_hora"
+        android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/et_nombre_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="@string/registro_nombre"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv_detalle_clase_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/detalle_clase_descripcion"
+        android:textColor="#FA000000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tv_apellido_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/registro_apellido"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv_info_detalle_clase_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/detalle_clase_descripcion"
+        android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/et_apellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="@string/registro_nombre"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv_detalle_clase_estatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/detalle_clase_estatus"
+        android:textColor="#FA000000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tv_correo_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/registro_correo1"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv_info_detalle_clase_estatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/detalle_clase_estatus"
+        android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/et_correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="@string/registro_correo"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tv_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/login_contrasena"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/et_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="@string/login_contrasena"
-            android:inputType="textPassword"
-            android:text="@string/vacio" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
         <TableRow
             android:id="@+id/tr_botones"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btn_regresar"
@@ -230,18 +211,18 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_green_light"
-                android:onClick="cancelar"
-                android:text="@string/grupo_btn_cancelar" />
+
+                android:onClick="regresar"
+                android:text="@string/detalle_grupo_regresar" />
 
             <Button
-                android:id="@+id/btn_usuario_agregar"
+                android:id="@+id/btn_asistencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_orange_dark"
-                android:onClick="agregar"
-                android:text="@string/login_btn_Registrar" />
+                android:text="@string/detalle_clase_asistencia" />
         </TableRow>
     </LinearLayout>
 

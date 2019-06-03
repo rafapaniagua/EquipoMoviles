@@ -111,4 +111,10 @@
     <string name="notificaciones_Opciones">Opciones</string>
     <string name="notificaciones_regresar">Regresar</string>
 
+    <string name="detalle_clase_title">Detalle clase (Id Clase)</string>
+    <string name="detalle_clase_fecha_hora">Fecha y Hora:</string>
+    <string name="detalle_clase_descripcion">Descripcion:</string>
+    <string name="detalle_clase_estatus">Estatus:</string>
+    <string name="detalle_clase_asistencia">Confirmar asistencia</string>
+
 </resources>
