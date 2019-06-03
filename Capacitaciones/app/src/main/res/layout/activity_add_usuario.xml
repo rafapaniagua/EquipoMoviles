@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ListCurso">
+    tools:context=".AddUsuario"
+    android:orientation="vertical">
 
     <TableRow
         android:id="@+id/tr_barra"
@@ -53,7 +53,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:onClick="irInicio"
             android:text="@string/menu_inicio"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -65,7 +64,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:onClick="irGrupos"
             android:text="@string/menu_grupo"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -77,7 +75,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:onClick="irCursos"
             android:text="@string/menu_curso"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -89,7 +86,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:onClick="irUsuarios"
             android:text="@string/menu_usuario"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -109,7 +105,6 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
-            android:onClick="irNotificaciones"
             app:srcCompat="@drawable/icono_notificacion" />
 
         <ImageView
@@ -118,103 +113,130 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/vacio"
-            android:onClick="salir"
             app:srcCompat="@drawable/icono_salir" />
-
     </TableRow>
-
     <TextView
-        android:id="@+id/tv_tituloUser"
+        android:id="@+id/tv_usuario_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/curso_list_titulo"
+        android:text="@string/usuarios_title"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
-
-    <TableRow
-        android:id="@+id/tr_menus"
+    <LinearLayout
+        android:id="@+id/tv_select_tol"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_list_usuario_nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/curso_list_nombre"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_list_curso_duracion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/curso_list_duracion"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/curso_list_opciones"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </TableRow>
-
-    <ScrollView
-        android:id="@+id/sv_list_cursos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+            android:id="@+id/tv_registro_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_margin="5dp"
+            android:text="@string/registro_nombre"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_cursos"
+        <EditText
+            android:id="@+id/et_nombre_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="@string/registro_nombre"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_apellido_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/registro_apellido"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="@string/registro_nombre"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_correo_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/registro_correo1"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="@string/registro_correo"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/login_contrasena"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="@string/login_contrasena"
+            android:inputType="textPassword"
+            android:text="@string/vacio" />
+
+        <TableRow
+            android:id="@+id/tr_botones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_regresar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:onClick="cancelar"
+                android:text="@string/grupo_btn_cancelar" />
 
-            <TableRow
-                android:id="@+id/tr_botones"
+            <Button
+                android:id="@+id/btn_usuario_agregar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_orange_dark"
+                android:onClick="agregar"
+                android:text="@string/login_btn_Registrar" />
+        </TableRow>
+    </LinearLayout>
 
-                <Button
-                    android:id="@+id/btn_regresar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/holo_green_light"
-                    android:onClick="irInicio"
-                    android:text="@string/curso_list_btnregresar" />
-
-                <Button
-                    android:id="@+id/btn_curso_agregar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/holo_orange_dark"
-                    android:onClick="newCurso"
-                    android:text="@string/curso_list_btnagregar" />
-            </TableRow>
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>

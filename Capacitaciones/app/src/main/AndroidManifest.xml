@@ -11,6 +11,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".DetalleGrupo"></activity>
         <activity android:name=".DetalleCurso" />
+        <activity android:name=".ListNotificaciones" />
+        <activity android:name=".AddUsuario" />
+        <activity android:name=".ListUsuario" />
+        <activity android:name=".DetalleCurso" />
         <activity android:name=".ListClase" />
         <activity android:name=".AddClase" />
         <activity android:name=".AddRegistroUsuarios" />

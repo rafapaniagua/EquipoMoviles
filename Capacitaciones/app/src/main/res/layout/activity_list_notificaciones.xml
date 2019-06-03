@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListCurso">
-
+    tools:context=".ListNotificaciones">
     <TableRow
         android:id="@+id/tr_barra"
         android:layout_width="match_parent"
@@ -122,16 +121,15 @@
             app:srcCompat="@drawable/icono_salir" />
 
     </TableRow>
-
     <TextView
-        android:id="@+id/tv_tituloUser"
+        android:id="@+id/tv_titulo_notificaciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/curso_list_titulo"
+        android:text="@string/notificaciones_title"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -142,34 +140,34 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/tv_list_usuario_nombre"
+            android:id="@+id/tv_notificacion_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/curso_list_nombre"
+            android:text="@string/notificaciones_fecha"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_list_curso_duracion"
+            android:id="@+id/tv_notificacion_descripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/curso_list_duracion"
+            android:text="@string/notificaciones_descripcion"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_notificacion_opciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/curso_list_opciones"
+            android:text="@string/notificaciones_Opciones"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -186,7 +184,7 @@
             android:orientation="vertical" >
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_cursos"
+                android:id="@+id/rv_notificaciones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -196,25 +194,16 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/btn_regresar"
+                    android:id="@+id/btn_notificacion_regresar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_green_light"
-                    android:onClick="irInicio"
-                    android:text="@string/curso_list_btnregresar" />
-
-                <Button
-                    android:id="@+id/btn_curso_agregar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/holo_orange_dark"
-                    android:onClick="newCurso"
-                    android:text="@string/curso_list_btnagregar" />
+                    android:onClick="irNuevoUsuario"
+                    android:text="@string/notificaciones_regresar" />
             </TableRow>
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

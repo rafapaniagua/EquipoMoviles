@@ -186,7 +186,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_list_grupo_opciones"
+            android:id="@+id/tv_usuario_opciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
