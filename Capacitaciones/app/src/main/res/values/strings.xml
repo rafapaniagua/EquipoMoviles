@@ -89,6 +89,12 @@
     <string name="inicio_list_clase_status">Status</string>
     <string name="inicio_list_clase_btnvermas">Ver Mas</string>
 
+    <string name="detalle_grupo_clave">Nombre Curso (Clave Grupo)</string>
+    <string name="detalle_grupo_descripcion_curso">Descripción del Curso</string>
+    <string name="detalle_grupo_clases">Clases</string>
+    <string name="detalle_grupo_regresar">Regresar</string>
+    <string name="detalle_grupo_inscribirme">Inscribirme</string>
+
     <string name="usuarios_list_titulo">Usuarios</string>
     <string name="usuarios_list_nombre">Nombre</string>
     <string name="usuarios_list_apellido">Apellido(s)</string>
