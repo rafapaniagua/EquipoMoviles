@@ -17,7 +17,7 @@ public class DetalleGrupo extends AppCompatActivity {
 
     TextView tv_nombre_usuario, tv_titulo, tv_info_detalle_grupo_docente, tv_info_detalle_grupo_status, tv_info_detalle_grupo_descripcion_curso;
     Button btn_inscribirme, btn_clases, btn_regresar;
-    String is_admin, id_usuario, id_grupo, nombreCompleto, rol;
+    String is_admin, id_usuario, id_grupo, nombreCompleto, rol, info_grupo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class DetalleGrupo extends AppCompatActivity {
                 if(rol.equals("Docente")){
                     Toast.makeText(getApplicationContext(), "Eres Docente de este Grupo", Toast.LENGTH_SHORT).show();
                 }else if(rol.equals("Alumno")){
-                    Toast.makeText(getApplicationContext(), "Ya estás inscrito en este Grupo Inscrito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Ya estás inscrito en este Grupo", Toast.LENGTH_SHORT).show();
                 }else{
                     //SI NO ES DOCENTE NI ALUMNO DEL GRUPO, SE PUEDE INSCRIBIR COMO ALUMNO
                     inscribir();
@@ -90,6 +90,7 @@ public class DetalleGrupo extends AppCompatActivity {
         if(fila.moveToFirst()) {
             //ASIGNAMOS LA INFORMACIÓN CONSULTADA EN LOS TEXTVIEW
             tv_titulo.setText(fila.getString(0)+" ("+fila.getString(1)+")");
+            info_grupo = tv_titulo.getText().toString();
             tv_info_detalle_grupo_docente.setText(fila.getString(2)+" "+fila.getString(3));
             tv_info_detalle_grupo_status.setText(fila.getString(4));
             tv_info_detalle_grupo_descripcion_curso.setText(fila.getString(5));
@@ -145,6 +146,8 @@ public class DetalleGrupo extends AppCompatActivity {
         intent.putExtra("id_usuario", this.id_usuario);
         intent.putExtra("nombreCompleto", nombreCompleto);
         intent.putExtra("id_grupo", id_grupo);
+        intent.putExtra("rol", rol);
+        intent.putExtra("info_grupo", info_grupo);
         startActivity(intent);
 
         this.finish();
