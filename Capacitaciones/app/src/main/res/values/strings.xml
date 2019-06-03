@@ -89,4 +89,20 @@
     <string name="inicio_list_clase_status">Status</string>
     <string name="inicio_list_clase_btnvermas">Ver Mas</string>
 
+    <string name="usuarios_list_titulo">Usuarios</string>
+    <string name="usuarios_list_nombre">Nombre</string>
+    <string name="usuarios_list_apellido">Apellido(s)</string>
+    <string name="usuarios_list_correo">Correo</string>
+    <string name="usuarios_list_opciones">Opciones</string>
+    <string name="usuarios_list_regresar">Regresar</string>
+    <string name="usuarios_list_registrar">Registrar</string>
+
+    <string name="usuarios_title">Nuevo usuario</string>
+
+    <string name="notificaciones_title">Notificaciones</string>
+    <string name="notificaciones_fecha">Fecha/Hora</string>
+    <string name="notificaciones_descripcion">Descripcion</string>
+    <string name="notificaciones_Opciones">Opciones</string>
+    <string name="notificaciones_regresar">Regresar</string>
+
 </resources>

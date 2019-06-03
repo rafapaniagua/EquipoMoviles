@@ -17,7 +17,6 @@ import com.example.capacitaciones.BaseDeDatos.AdminSQliteOpenHelper;
 import com.example.capacitaciones.Modelos.Cursos;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AdapterCursos extends RecyclerView.Adapter<AdapterCursos.ViewHolderCursos> {
 
@@ -57,7 +56,7 @@ public class AdapterCursos extends RecyclerView.Adapter<AdapterCursos.ViewHolder
         public ViewHolderCursos(@NonNull View itemView) {
             super(itemView);
 
-            nombre = (TextView) itemView.findViewById(R.id.tv_list_curso_nombre);
+            nombre = (TextView) itemView.findViewById(R.id.tv_list_usuario_nombre);
             duracion = (TextView) itemView.findViewById(R.id.tv_list_curso_duracion);
             iv_ver = (ImageView) itemView.findViewById(R.id.iv_list_curso_ver);
             iv_editar = (ImageView) itemView.findViewById(R.id.iv_list_curso_editar);

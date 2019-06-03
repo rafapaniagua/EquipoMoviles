@@ -28,7 +28,7 @@ public class AddRegistroUsuarios extends AppCompatActivity {
         et_apellido = (EditText) findViewById(R.id.et_apellido);
         et_correo = (EditText) findViewById(R.id.et_correo);
         et_contrasena = (EditText) findViewById(R.id.et_contrasena);
-        btn_agregar = (Button) findViewById(R.id.btn_agregar);
+        btn_agregar = (Button) findViewById(R.id.btn_curso_agregar);
         btn_regresar = (Button) findViewById(R.id.btn_regresar);
 
         btn_agregar.setOnClickListener(new View.OnClickListener() {
@@ -51,11 +51,9 @@ public class AddRegistroUsuarios extends AppCompatActivity {
         String is_admin = "false";
         if(!nombre.isEmpty() && !apellido.isEmpty() && !correo.isEmpty() && !contrasena.isEmpty()){
             ContentValues registro = new ContentValues();
-
-            registro.put("id","0");
-            registro.put("nombre",nombre);
-            registro.put("apellido",apellido);
-            registro.put("corro",correo);
+            registro.put("nombres",nombre);
+            registro.put("apellidos",apellido);
+            registro.put("correo",correo);
             registro.put("contrasena",contrasena);
             registro.put("is_admin",is_admin);
             //Ingresamos registro en la tabla de usuarios

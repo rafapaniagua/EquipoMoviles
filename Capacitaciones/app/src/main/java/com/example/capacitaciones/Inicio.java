@@ -186,13 +186,12 @@ public class Inicio extends AppCompatActivity {
 
     public void irUsuarios(View v){
         if(is_admin.equals("true")) {
-        /*Intent intent = new Intent(this, ListUsuario.class);
-        intent.putExtra("is_admin", is_admin);
+        Intent intent = new Intent(this, ListUsuario.class);
+        intent.putExtra( "is_admin", is_admin);
         intent.putExtra("id_usuario", id_usuario);
         intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
-
-        this.finish();*/
+        this.finish();
 
             Toast.makeText(this, "Ir a Menú Usuarios", Toast.LENGTH_SHORT).show();
         }else{
@@ -201,13 +200,13 @@ public class Inicio extends AppCompatActivity {
     }
 
     public void irNotificaciones(View v){
-        /*Intent intent = new Intent(this, ListNotificaciones.class);
+        Intent intent = new Intent(this, ListNotificaciones.class);
         intent.putExtra("is_admin", is_admin);
         intent.putExtra("id_usuario", id_usuario);
         intent.putExtra("nombreCompleto", nombreCompleto);
         startActivity(intent);
 
-        this.finish();*/
+        this.finish();
 
         Toast.makeText(this, "Ir a Notificaciones", Toast.LENGTH_SHORT).show();
     }
